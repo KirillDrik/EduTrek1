@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+:root {
+    /* Colors */
+    --color-archive: #737975;
+    --color-student: #CC772E;
+    --color-consultation: #2EA8CC;
+    --color-save-for-later: #CCB42E;
+    --color-dark: #2B2D2F; /* Темный цвет для текста */
+    --color-light-gray: #D8D8D9; /* Светло-серый цвет */
+    --color-success: #2ECC71; /* Зеленый цвет для кнопок */
+    --color-background: #F8F8F8; /* Цвет фона для модального окна */
+    --color-gray: #B2B3B4; /* Серый цвет для текста */
+    --color-warning: #F0856B; /* Цвет для предупреждений */
+    /* Font/text values */
+    --awesome-5-pro: Font Awesome 5 Pro;
+    --font-family-ubuntu: 'Ubuntu', sans-serif;
+    --font-weight-normal: normal; /* Обычный вес шрифта */
+    --font-weight-bold: bold; /* Жирный вес шрифта */
+    --font-size-small: 14px; /* Маленький размер шрифта */
+    --font-size-medium: 16px; /* Средний размер шрифта */
+    --font-size-large: 18px; /* Большой размер шрифта */
+    --line-height-normal: 16px; /* Нормальная высота строки */
+    --line-height-medium: 18px; /* Средняя высота строки */
+    --line-height-large: 22px; /* Большая высота строки */
+    --line-height-xlarge: 27px; /* Очень большая высота строки */
+
+    --character-spacing-0: 0px;
+    --line-spacing-16: 16px;
+    --line-spacing-18: 18px;
+    --line-spacing-22: 22px;
+    --line-spacing-27: 27px;
+}
+
+/* Common basic ------------------------------------------ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body * {
+    font-family: var(--font-family-ubuntu);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Main layout ------------------------------------------ */
+
+.payment-modal {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    position: relative;
+    width: 600px;
+    height: 370px;
+    background: var(--color-background) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    border-top: 6px solid var(--color-success);
+    box-sizing: border-box;
+}
+
+.payment-modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /*border: 1px solid red;*/
+    width: 100%;
+    height: 15%;
+}
+
+.payment-modal-form {
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid red;*/
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* Header ------------------------------------------ */
+
+.payment-modal-header-title {
+    position: relative;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font: normal normal var(--font-weight-bold);
+    letter-spacing: 0;
+    color: var( --color-dark);
+    opacity: 1;
+}
+
+.payment-modal-header-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    font-size: 1.5rem;
+    letter-spacing: var(--character-spacing-0);
+    color: var( --color-dark);
+    text-align: center;
+    opacity: 1;
+
+    border: 0;
+    background-color: transparent;
+}
+
+
+/* Form ------------------------------------------ */
+
+.payment-modal-form-fields-container {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    /*border: 1px solid violet;*/
+}
+
+.payment-modal-form-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    height: 20%;
+    /*border: 1px solid violet;*/
+}
+
+/* Fields ------------------------------------------ */
+
+.payment-modal-form-fields {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    margin-right: 20px;
+    color: var(--color-dark);
+}
+
+.form-group select, .form-group input {
+    width: 247px;
+    height: 37px;
+    border: 1px solid var(--color-light-gray);
+    margin: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22%2F%3E%3Cpath%20fill%3D%22%232ecc71%22%20d%3D%22M7.41%208.59L12%2013.17l4.59-4.58L18%2010l-6%206-6-6%201.41-1.41z%22%20class%3D%22color000000%20svgShape%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: left 0.0rem top 50%;
+    background-size: 2rem auto;
+
+
+    padding-left: 30px;
+}
+
+/* Buttons ------------------------------------------ */
+.cancel-btn, .save-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 40px;
+    border-radius: 25px;
+    margin-left: 20px;
+    border: 0;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: var(--color-success);
+}
+
+.save-btn {
+    background-color: var(--color-success);
+    color: var(--color-background);
+}

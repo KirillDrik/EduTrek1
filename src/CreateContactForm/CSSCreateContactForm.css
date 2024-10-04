@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+:root {
+    /* Colors */
+    --color-archive: #737975;
+    --color-student: #CC772E;
+    --color-consultation: #2EA8CC;
+    --color-save-for-later: #CCB42E;
+    --color-dark: #2B2D2F; /* Темный цвет для текста */
+    --color-light-gray: #D8D8D9; /* Светло-серый цвет */
+    --color-success: #2ECC71; /* Зеленый цвет для кнопок */
+    --color-background: #F8F8F8; /* Цвет фона для модального окна */
+    --color-gray: #B2B3B4; /* Серый цвет для текста */
+    --color-warning: #F0856B; /* Цвет для предупреждений */
+    /* Font/text values */
+    --awesome-5-pro: Font Awesome 5 Pro;
+    --font-family-ubuntu: 'Ubuntu', sans-serif;
+    --font-weight-normal: normal; /* Обычный вес шрифта */
+    --font-weight-bold: bold; /* Жирный вес шрифта */
+    --font-size-small: 14px; /* Маленький размер шрифта */
+    --font-size-medium: 16px; /* Средний размер шрифта */
+    --font-size-large: 18px; /* Большой размер шрифта */
+    --line-height-normal: 16px; /* Нормальная высота строки */
+    --line-height-medium: 18px; /* Средняя высота строки */
+    --line-height-large: 22px; /* Большая высота строки */
+    --line-height-xlarge: 27px; /* Очень большая высота строки */
+
+    --character-spacing-0: 0px;
+    --line-spacing-16: 16px;
+    --line-spacing-18: 18px;
+    --line-spacing-22: 22px;
+    --line-spacing-27: 27px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body * {
+    font-family: var(--font-family-ubuntu);
+    font-weight: var(--font-weight-bold);
+}
+
+
+
+.contact-modal {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    width: 600px;
+    height: 562px;
+    background-color: #fff;
+
+    padding: 20px;
+    box-shadow: 0px 3px 6px #00000029;
+    border-top: 4px solid #28a745;
+}
+
+
+
+
+
+/* Header ------------------------------------------ */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* Form ------------------------------------------ */
+
+.contact-modal-body{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.form-body {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 15px;
+}
+/* Fields ------------------------------------------ */
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.form-row label {
+    margin-right: 20px;
+    color: var(--color-dark);
+}
+
+.form-row input, .form-row select {
+    width: 247px;
+    height: 37px;
+    border: 1px solid var(--color-light-gray);
+    margin: 0;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.form-row-comment-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.form-row-comment-row label {
+
+    margin-right: 20px;
+
+}
+
+.form-row-comment-row textarea {
+
+    width: 406px;
+    height: 69px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top:9%;
+}
+/* Buttons ------------------------------------------ */
+.cancel-btn, .save-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 40px;
+    border-radius: 25px;
+    margin-left: 20px;
+    border: 0;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: var(--color-success);
+}
+
+.save-btn {
+    background-color: var(--color-success);
+    color: var(--color-background);
+}
+/* Status ------------------------------------------ */
+.status-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 120px;
+    background-color: white;
+    padding: 1px;
+
+
+}
+
+.status-container label {
+    display: flex;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+
+.status-container input {
+    margin-right: 5px;
+}
+
+.status-label input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.lead input[type="radio"] {
+    background-color: green;
+}
+
+.in-work input[type="radio"] {
+    background-color: lightgreen;
+}
+
+.consultation input[type="radio"] {
+    background-color: deepskyblue;
+}
+
+.save-for-later input[type="radio"] {
+    background-color: goldenrod;
+}
+
+.student input[type="radio"] {
+    background-color: orange;
+}
+
+.archive input[type="radio"] {
+    background-color: gray;
+}
+
+.status-label input[type="radio"]:checked {
+    background-color: white;
+    border-color: currentColor; /* Цвет обводки наследует цвет от родительского элемента */
+}
+
+.lead input[type="radio"]:checked {
+    color: green;
+}
+
+.in-work input[type="radio"]:checked {
+    color: lightgreen;
+}
+
+.consultation input[type="radio"]:checked {
+    color: deepskyblue;
+}
+
+.save-for-later input[type="radio"]:checked {
+    color: goldenrod;
+}
+
+.student input[type="radio"]:checked {
+    color: orange;
+}
+
+.archive input[type="radio"]:checked {
+    color: gray;
+}
