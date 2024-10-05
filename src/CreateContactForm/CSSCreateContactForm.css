@@ -59,7 +59,7 @@ body * {
     position: relative;
     width: 600px;
     height: 562px;
-    background-color: #fff;
+    background: var(--color-background) 0% 0% no-repeat padding-box;
 
     padding: 20px;
     box-shadow: 0px 3px 6px #00000029;
@@ -87,17 +87,18 @@ body * {
 
 /* Form ------------------------------------------ */
 
-.contact-modal-body{
+.form-body{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 
 }
 
 
-.form-body {
+.form-body-top {
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
     gap: 15px;
 }
 /* Fields ------------------------------------------ */
@@ -106,10 +107,13 @@ body * {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 1px;
+    margin-bottom: 10px;
 }
 
-.form-row label {
+.form-row label, .form-body-down label {
+    display: flex;
+    justify-content: flex-end;
+    width: 100px;
     margin-right: 20px;
     color: var(--color-dark);
 }
@@ -123,23 +127,21 @@ body * {
     box-sizing: border-box;
 }
 
-.form-row-comment-row {
+.form-body-down {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
 }
 
-.form-row-comment-row label {
 
-    margin-right: 20px;
 
-}
-
-.form-row-comment-row textarea {
-
-    width: 406px;
-    height: 69px;
+.form-body-down textarea {
+    resize: none;
+    display: flex;
+    flex-grow: 1;
+    background: var(--color-background);
+    height: 70px;
     padding: 5px;
     font-size: 14px;
     border-radius: 4px;
@@ -149,8 +151,8 @@ body * {
 .form-footer {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
-    margin-top:9%;
+    gap: 5px;
+    margin-top:10%;
 }
 /* Buttons ------------------------------------------ */
 .cancel-btn, .save-btn {
@@ -174,23 +176,26 @@ body * {
     color: var(--color-background);
 }
 /* Status ------------------------------------------ */
-.status-container {
+.form-body-top-right {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 120px;
-    background-color: white;
+    width: auto;
     padding: 1px;
 
 
 }
 
-.status-container label {
+.form-body-top-right label {
     display: flex;
     margin-bottom: 8px;
     font-size: 12px;
-}
 
+}
+.status-label {
+    display: flex;
+    align-items: center;
+}
 
 .status-container input {
     margin-right: 5px;
@@ -233,7 +238,7 @@ body * {
 
 .status-label input[type="radio"]:checked {
     background-color: white;
-    border-color: currentColor; /* Цвет обводки наследует цвет от родительского элемента */
+    border-color: currentColor;
 }
 
 .lead input[type="radio"]:checked {
